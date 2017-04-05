@@ -2,3 +2,13 @@
   color: blue;
 }
 
+.new-reminder-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.new-reminder-inputs input {
+  margin: 10px 0;
+  padding: 5px;
+}
