@@ -49,6 +49,17 @@ test('before submit five', function(assert) {
   andThen(function() {
     assert.equal(Ember.$('.reminder-item').length, 6)
   })
-
-
 })
+
+test('should display message to create reminder if no reminders', function(assert) {
+  server.createList('reminder', 0);
+
+  visit('/reminders')
+
+  andThen(function() {
+    assert.equal(Ember.$('.reminder-item').length, 0);
+    assert.equal(Ember.$('.reminder-message').length, 1);
+  })
+})
+
+
