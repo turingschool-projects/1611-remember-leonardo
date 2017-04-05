@@ -4,5 +4,10 @@
 <h4>
   <p>{{model.body}}</p>
   <p>{{model.date}}</p>
+
+  {{#link-to 'reminders.reminder.edit'}}
+  <button>Edit this reminder</button>
+
+  {{/link-to}}
 </h4>
 
