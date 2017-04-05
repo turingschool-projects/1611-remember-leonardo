@@ -10,5 +10,9 @@
 
 {{/each}}
 
-{{outlet}}
+{{#link-to 'reminders.new'}}
+  <button class="new-reminder-button">New Reminder</button>
+{{/link-to}}
 
+
+{{outlet}}
