@@ -30,8 +30,25 @@ test('clicking on an individual item', function(assert) {
   });
 });
 
+test('before submit five', function(assert) {
+  server.createList('reminder', 5);
+
+  visit('/reminders')
+
+  andThen(function() {
+    assert.equal(Ember.$('.reminder-item').length, 5);
+  })
+
+  click('.new-reminder-button')
+
+  fillIn('.input-title', 'asdf')
+  fillIn('.input-body', 'poop')
+
+  click('.submit-button')
+
+  andThen(function() {
+    assert.equal(Ember.$('.reminder-item').length, 6)
+  })
 
 
-
-
-
+})
